@@ -2,13 +2,11 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>wg</groupId>
-  <artifactId>es-client-demo</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <groupId>guan.c.wang</groupId>
+  <artifactId>java-design-pattern</artifactId>
+  <version>1.0</version>
   <packaging>jar</packaging>
 
-  <name>es-client-demo</name>
-  <url>http://maven.apache.org</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

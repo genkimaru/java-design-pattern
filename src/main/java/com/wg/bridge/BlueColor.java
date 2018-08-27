@@ -8,6 +8,8 @@ public class BlueColor implements Color {
 		
 		this.color = "BLUE";
 	}
+
+
 	@Override
 	public String getColor() {
 		return this.color;

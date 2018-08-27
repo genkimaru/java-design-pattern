@@ -1,8 +1,7 @@
-package wg.com.single;
+package com.wg.single;
 
 
 /***
- * ±¥ºº·¨
  * @author Administrator
  *
  */

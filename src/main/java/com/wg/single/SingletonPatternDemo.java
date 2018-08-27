@@ -1,6 +1,8 @@
-package wg.com.single;
+package com.wg.single;
 
-import java.util.Currency;
+
+
+
 
 public class SingletonPatternDemo implements Runnable{
 
@@ -21,9 +23,9 @@ public class SingletonPatternDemo implements Runnable{
 
 	}
 
-	@Override
+
 	public void run() {
-		Singleton2 singleton2 = Singleton2.getSingleton2();
+		com.wg.single.Singleton2 singleton2 = Singleton2.getSingleton2();
 		System.out.println(Thread.currentThread().getName());
 	}
 }
