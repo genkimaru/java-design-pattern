@@ -1,5 +1,7 @@
 package com.datastructure;
 
+import java.util.Arrays;
+
 /**
  * @auther guan.c.wang
  * @date 3/9/2022.
@@ -17,22 +19,6 @@ public class BinaryTree {
                 continue;
             }
             setNode(tree[0], tree[i]);
-//            if (i == 0) {
-//               continue;
-//            } else {
-//                second:
-//                for (int j = 0; j < i; j++) {
-//                    if (array[i] > array[j] & tree[j].getRight() == null) {
-//                        tree[j].setRight(tree[i]);
-//                        break second;
-//                    } else if (array[i] < array[j] & tree[j].getLeft() == null) {
-//                        tree[j].setLeft(tree[i]);
-//                        break second;
-//                    } else {
-//                        continue;
-//                    }
-//                }
-//            }
         }
     }
 
@@ -53,6 +39,13 @@ public class BinaryTree {
 
     }
 
+    public void insertNode(Integer i) throws Exception {
+        Node newNode = new Node(i, null ,null);
+        this.tree = Arrays.copyOf(tree, tree.length + 1);
+        this.tree[tree.length -1 ] = newNode;
+        setNode(this.tree[0], newNode);
+    }
+
 
     public String printBinaryTree() {
         StringBuffer sb = new StringBuffer();
@@ -63,6 +56,54 @@ public class BinaryTree {
         return sb.toString();
 
     }
+
+
+    public String printBinaryTree(int level) {
+//        StringBuffer sb = new StringBuffer();
+        String s = printNode(tree[0]);
+        return s;
+
+    }
+
+
+
+
+
+    private String printNode(Node node){
+        StringBuffer sb = new StringBuffer();
+        sb.append("\t\t");
+        sb.append(node.getData());
+        sb.append("\n");
+        String subNodeStr = printSubNode(node);
+        sb.append(subNodeStr);
+        return sb.toString();
+    }
+
+    private String printSubNode(Node node){
+        StringBuffer sb = new StringBuffer();
+        sb.append("\t");
+        if(node.getLeft() != null){
+            sb.append("/");
+        }
+        sb.append("\t\t");
+        if(node.getRight() != null){
+            sb.append("\\");
+        }
+        sb.append("\n");
+        if(node.getLeft() != null){
+            sb.append(node.getLeft().getData());
+            String nodeStr = printNode(node.getLeft());
+            sb.append(nodeStr);
+        }
+        if(node.getRight() != null){
+            sb.append("\t\t\t\t");
+            sb.append(node.getRight().getData());
+            String nodeStr = printNode(node.getRight());
+            sb.append(nodeStr);
+        }
+        return sb.toString();
+    }
+
 }
 
 
